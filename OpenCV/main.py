@@ -3,6 +3,7 @@ import numpy as np
 import requests
 import imutils
 
+# Вывод картинки на экран
 
 def print_img():
     img1 = cv2.imread(r'01.jpg')
@@ -13,7 +14,8 @@ def print_img():
     cv2.destroyAllWindows()
 
 
-
+# Вывод видео на экран
+    
 def print_video():
  cap = cv2.VideoCapture(r'C:\Users\rzarg\OneDrive\Рабочий стол\сек.mp4', cv2.CAP_ANY)
 
@@ -35,7 +37,8 @@ def print_video():
  cv2.destroyAllWindows()
 
 
-
+# Вывод изображения с камеры телефона на экран
+    
 def print_cam():
  url = "http://192.168.1.103:8080/shot.jpg"
 
@@ -54,7 +57,8 @@ def print_cam():
 
 
 
-
+# Вывод изображения с веб-камеры на экран
+            
 def reabWebCamera():
         cv2.namedWindow("Camera")
         vc = cv2.VideoCapture(0)
