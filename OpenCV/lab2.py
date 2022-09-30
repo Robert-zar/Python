@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import math
 
+#Перекрашивает изображение в чёрно-белое
 
 def print_img():
  img1 = cv2.imread(r'01.jpg', cv2.IMREAD_ANYDEPTH)
@@ -10,6 +11,9 @@ def print_img():
  cv2.imshow("Display Window", img1)
  cv2.waitKey(0)
  cv2.destroyAllWindows()
+ 
+ 
+#Матрица гаусса
 
 def matr(n, m):
  matrix = np.array([[(1 / (2 * math.pi * m * m) * math.exp(-((j - n // 2) * (j - n // 2) + (i - n // 2) * (i - n // 2)) / 2 * m * m)) for j in range(n)] for i in range(n)])
@@ -19,6 +23,9 @@ def matr(n, m):
  print(matrix.sum())
  print(matrix)
 
+ 
+ #Размытие изображения по гауссу
+ 
 def gauss():
  img = cv2.imread(r'01.jpg')
  gaussian = cv2.GaussianBlur(img, (9, 9), 0)
