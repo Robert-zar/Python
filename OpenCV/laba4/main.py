@@ -17,9 +17,9 @@ while input_cam.isOpened():  # Пока объект захвата открыт
 
     diff = cv2.absdiff(frame1, frame2)  # Абсолютная разница помогает определить те области, что двигаются
     gray = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)  
-    blur = cv2.GaussianBlur(gray, (5, 5), 1.3)
+    blur = cv2.GaussianBlur(gray, (5, 5), 0)
 
-    ret, thresh = cv2.threshold(blur, 30, 255, cv2.THRESH_BINARY)
+    ret, thresh = cv2.threshold(blur, 20, 255, cv2.THRESH_BINARY)
 
     # Выделяем контуры. Аргументы - (image, mode, method)
     contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
