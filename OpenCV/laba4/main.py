@@ -22,7 +22,7 @@ while input_cam.isOpened():  # Пока объект захвата открыт
     ret, thresh = cv2.threshold(blur, 20, 255, cv2.THRESH_BINARY)
 
     # Выделяем контуры. Аргументы - (image, mode, method)
-    contours, _ = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     for contour in contours:
         if cv2.contourArea(contour) < 300:
