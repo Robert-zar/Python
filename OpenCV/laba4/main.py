@@ -16,7 +16,7 @@ while input_cam.isOpened():  # Пока объект захвата открыт
     ret, frame2 = input_cam.read()  # Метод input_cam.read() возвращают кортеж (логическое значение, кадр)
 
     diff = cv2.absdiff(frame1, frame2)  # Абсолютная разница помогает определить те области, что двигаются
-    gray = cv2.cvtColor(diff, cv2.COLOR_RGB2GRAY)  # Переводим в чб
+    gray = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)  
     blur = cv2.GaussianBlur(gray, (5, 5), 0)
 
     ret, thresh = cv2.threshold(blur, 20, 255, cv2.THRESH_BINARY)
