@@ -15,11 +15,17 @@ while input_cam.isOpened():  # Пока объект захвата открыт
     ret, frame1 = input_cam.read()  # Берём два фрейма
     ret, frame2 = input_cam.read()  # Метод input_cam.read() возвращают кортеж (логическое значение, кадр)
 
-    diff = cv2.absdiff(frame1, frame2)  # Абсолютная разница помогает определить те области, что двигаются
-    gray = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)  
+    gray = cv2.cvtColor(frame2, cv2.COLOR_BGR2GRAY)  # Переводим в чб
+    cv2.imshow('cvt', gray)
+
     blur = cv2.GaussianBlur(gray, (5, 5), 0)
+    cv2.imshow('blur', blur)
+
+    diff = cv2.absdiff(frame1, frame2)  # Абсолютная разница помогает определить те области, что двигаются
+    cv2.imshow('abs', diff)
 
     ret, thresh = cv2.threshold(blur, 20, 255, cv2.THRESH_BINARY)
+    cv2.imshow('thresh', thresh)
 
     # Выделяем контуры. Аргументы - (image, mode, method)
     contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
