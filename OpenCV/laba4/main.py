@@ -11,7 +11,7 @@ fps = 70
 # Объект записи видео
 output = cv2.VideoWriter('detected1.avi', cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'), fps, frame_size)
 
-while input_cam.isOpened():  # Пока объект захвата открыт
+while input_cam.isOpened():  
     ret, frame1 = input_cam.read()  # Берём два фрейма
     ret, frame2 = input_cam.read()  
 
