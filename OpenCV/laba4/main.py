@@ -13,7 +13,7 @@ output = cv2.VideoWriter('detected1.avi', cv2.VideoWriter_fourcc('M', 'J', 'P', 
 
 while input_cam.isOpened():  # Пока объект захвата открыт
     ret, frame1 = input_cam.read()  # Берём два фрейма
-    ret, frame2 = input_cam.read()  # Метод input_cam.read() возвращают кортеж (логическое значение, кадр)
+    ret, frame2 = input_cam.read()  
 
     gray = cv2.cvtColor(frame2, cv2.COLOR_BGR2GRAY)  # Переводим в чб
     cv2.imshow('cvt', gray)
