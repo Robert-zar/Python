@@ -1,3 +1,5 @@
+# Распознаёт номер машины на видео. В папке проекта должна быть папка "img2", в которую сохраняться фотки с номером
+
 import cv2
 import numpy as np
 import imutils
@@ -7,7 +9,7 @@ import datetime
 
 def main1():
     name_videosos = "vid"
-    cap = cv2.VideoCapture(f"C:/Users/rzarg/PycharmProjects/ind7/vid.mp4")
+    cap = cv2.VideoCapture(f"C:/Users/rzarg/PycharmProjects/ind7/vid.mp4") # Исходное видео
     # ret, frame = video.read()  # Берёт первый кадр
     w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
